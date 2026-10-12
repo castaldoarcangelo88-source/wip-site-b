@@ -73,3 +73,11 @@ footer{text-align:center;padding:24px;font-size:.9rem;opacity:.75}
  footer{padding:16px 12px;font-size:.8rem}
  .coriandoli{opacity:.25;background-size:140px 140px,200px 200px;animation-duration:50s}
 }
+
+/* Banner HandiMap */
+.banner-handimap{margin:10px auto 34px;max-width:440px;padding:0 4px}
+.banner-handimap a{display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff;border:1px solid var(--oro);border-radius:16px;padding:14px 20px;text-decoration:none;color:var(--rosa-scuro);box-shadow:0 6px 18px rgba(184,92,110,.12);transition:transform .2s,box-shadow .2s}
+.banner-handimap a:hover,.banner-handimap a:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(184,92,110,.2)}
+.banner-testo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem}
+.banner-handimap img{display:block;width:100%;max-width:260px;height:auto}
+@media (max-width:480px){.banner-handimap{margin:4px auto 22px}.banner-handimap img{max-width:210px}}
