@@ -1,0 +1,48 @@
+:root{--crema:#fff8f0;--rosa:#e8a5a5;--rosa-scuro:#b85c6e;--oro:#c9a14a;--testo:#4a3036}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;color:var(--testo);min-height:100vh;
+ background:radial-gradient(circle at 15% 10%,#ffe3e3 0,transparent 40%),radial-gradient(circle at 90% 30%,#fff0d1 0,transparent 45%),linear-gradient(160deg,#fff8f0,#fdeef0);}
+.coriandoli{position:fixed;inset:0;pointer-events:none;opacity:.5;
+ background-image:radial-gradient(var(--oro) 1.5px,transparent 2px),radial-gradient(var(--rosa) 2px,transparent 2.5px);
+ background-size:90px 90px,130px 130px;background-position:0 0,40px 60px;animation:cade 30s linear infinite}
+@keyframes cade{to{background-position:0 900px,40px 1360px}}
+main{position:relative;max-width:1120px;margin:0 auto;padding:56px 24px 24px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.dedica{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--rosa-scuro);letter-spacing:.05em}
+h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;margin:.3em 0 .1em}
+h1 span{font-family:'Great Vibes',cursive;font-weight:400;font-size:1.55em;color:var(--rosa-scuro);display:inline-block;margin-top:.1em}
+.fregio{color:var(--oro);letter-spacing:.6em;margin:.6em 0}
+.arrivo{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+ background:linear-gradient(90deg,var(--oro),#e6c77a,var(--oro));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro{margin:1em 0 1.6em;font-size:1.08rem;line-height:1.7;max-width:34em}
+.musica{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-play{font:600 1.05rem 'Nunito',sans-serif;color:#fff;border:0;cursor:pointer;padding:16px 28px;border-radius:999px;
+ background:linear-gradient(135deg,var(--rosa-scuro),#d98a8a);box-shadow:0 10px 25px rgba(184,92,110,.35);transition:transform .2s,box-shadow .2s;animation:pulsa 2.4s ease-in-out infinite}
+.btn-play:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(184,92,110,.45)}
+.btn-play.attivo{animation:none;background:linear-gradient(135deg,var(--oro),#d9b866)}
+@keyframes pulsa{50%{box-shadow:0 10px 35px rgba(184,92,110,.6)}}
+.btn-mute{width:52px;height:52px;border-radius:50%;border:2px solid var(--oro);background:#fff;font-size:1.3rem;cursor:pointer}
+.stato{min-height:1.4em;margin-top:.8em;font-style:italic;color:var(--rosa-scuro)}
+.ritratto{position:relative;justify-self:center;max-width:380px}
+.ritratto img{width:100%;height:auto;display:block;border-radius:200px 200px 24px 24px;border:6px solid #fff;box-shadow:0 0 0 2px var(--oro),0 25px 50px rgba(74,48,54,.25)}
+.ritratto::after{content:'❀';position:absolute;right:-14px;top:30px;font-size:2.4rem;color:var(--oro)}
+.galleria{margin-top:80px;text-align:center}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--rosa-scuro)}
+.sottotitolo{margin:.4em 0 1.8em;font-style:italic}
+.griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.griglia figure{background:#fff;padding:10px 10px 10px;border-radius:14px;box-shadow:0 10px 25px rgba(74,48,54,.12);transition:transform .3s}
+.griglia figure:nth-child(odd){transform:rotate(-1.5deg)}.griglia figure:nth-child(even){transform:rotate(1.5deg)}
+.griglia figure:hover{transform:rotate(0) scale(1.03)}
+.griglia img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block}
+.messaggio{margin:70px auto 30px;max-width:640px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;line-height:1.5;border-top:1px solid var(--oro);border-bottom:1px solid var(--oro);padding:26px 10px}
+footer{text-align:center;padding:24px;font-size:.9rem;opacity:.75}
+.yt-wrap{position:fixed;width:1px;height:1px;bottom:0;left:0;overflow:hidden;opacity:0;pointer-events:none}
+@media (max-width:820px){
+ main{padding:36px 18px 10px}
+ .hero{grid-template-columns:1fr;gap:32px;text-align:center}
+ .ritratto{order:-1;max-width:260px}
+ .intro{margin-left:auto;margin-right:auto}.musica{justify-content:center}
+ .griglia{grid-template-columns:repeat(2,1fr);gap:14px}
+ .messaggio{font-size:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
