@@ -46,3 +46,30 @@ footer{text-align:center;padding:24px;font-size:.9rem;opacity:.75}
  .messaggio{font-size:1.25rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+/* Mobile: tutto il primo schermo visibile (≤480px) */
+@media (max-width:480px){
+ main{padding:max(14px,env(safe-area-inset-top)) 16px 8px;overflow-x:hidden}
+ .hero{gap:clamp(10px,2.2vh,18px)}
+ .ritratto{max-width:none;width:58vw;justify-self:center}
+ .ritratto img{width:100%;height:auto;max-height:38vh;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:999px 999px 16px 16px;border-width:4px}
+ .ritratto::after{font-size:1.6rem;right:-10px;top:14px}
+ .hero-testo{display:flex;flex-direction:column;align-items:center}
+ .dedica{font-size:clamp(1rem,4.2vw,1.15rem)}
+ h1{font-size:clamp(1.75rem,8vw,2.2rem);margin:.15em 0 0}
+ h1 span{font-size:1.45em;margin-top:0}
+ .fregio{margin:.25em 0;font-size:.85rem}
+ .arrivo{font-size:clamp(1.1rem,5vw,1.35rem);letter-spacing:.14em}
+ .musica{order:5;width:100%;margin-top:clamp(10px,1.8vh,16px);flex-wrap:nowrap}
+ .btn-play{flex:1;width:100%;min-height:48px;padding:12px 18px;font-size:clamp(.95rem,4.2vw,1.05rem)}
+ .btn-mute{flex:none;width:48px;height:48px}
+ .stato{order:6;margin-top:.4em;font-size:.9rem}
+ .intro{order:7;margin:.6em 0 0;font-size:clamp(.95rem,4vw,1.02rem);line-height:1.55}
+ .galleria{margin-top:40px}
+ .sottotitolo{margin:.3em 0 1.2em;font-size:.95rem}
+ .griglia{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .griglia figure{padding:6px;min-width:0}
+ .griglia figure:nth-child(odd),.griglia figure:nth-child(even){transform:rotate(0)}
+ .messaggio{margin:40px auto 20px;font-size:clamp(1.05rem,4.8vw,1.2rem);padding:18px 6px}
+ footer{padding:16px 12px;font-size:.8rem}
+ .coriandoli{opacity:.25;background-size:140px 140px,200px 200px;animation-duration:50s}
+}
