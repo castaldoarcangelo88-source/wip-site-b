@@ -10,7 +10,7 @@
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 <link rel="stylesheet" href="consenso/consenso-cookie.css">
 <script src="consenso/consenso-cookie.js" data-ga-id="G-HYYZ6MDRPR" data-informativa="cookie.html" data-nome-sito="Il Mondo di Baby Pepita"></script>
 </head>
@@ -42,11 +42,20 @@
       <div class="copertina"><img src="assets/copertina-labirinti-anima.jpg" width="900" height="1200" alt="Copertina di «I labirinti dell'anima», Edizioni Melagrana" loading="lazy"></div>
       <h3>I labirinti dell'anima</h3>
       <p class="editore">Edizioni Melagrana</p>
+      <!-- Link del catalogo WhatsApp per «I labirinti dell'anima»: incollalo in data-link (vuoto = pulsante nascosto) -->
+      <a class="btn-whatsapp" data-link="" hidden target="_blank" rel="noopener">Acquista su WhatsApp</a>
     </article>
     <article class="scheda">
       <div class="copertina"><img src="assets/libro-dettaglio.webp" alt="Copertina del libro «Oltre il confine dell'invisibile»" loading="lazy"></div>
       <h3>Oltre il confine dell'invisibile</h3>
       <p class="editore">Astra Editori</p>
+      <ul class="mini-galleria" aria-label="Foto del libro «Oltre il confine dell'invisibile»">
+        <li><a href="assets/libro-stand.webp" target="_blank" rel="noopener"><img src="assets/libro-stand.webp" alt="Il libro esposto allo stand di Astra Editori" width="462" height="1000" loading="lazy" decoding="async"></a></li>
+        <li><a href="assets/libro-copie.webp" target="_blank" rel="noopener"><img src="assets/libro-copie.webp" alt="Copie del libro pronte per i lettori" width="721" height="1000" loading="lazy" decoding="async"></a></li>
+        <li><a href="assets/libro-astra.webp" target="_blank" rel="noopener"><img src="assets/libro-astra.webp" alt="Il banco dei libri con Astra Editori" width="462" height="1000" loading="lazy" decoding="async"></a></li>
+      </ul>
+      <!-- Link del catalogo WhatsApp per «Oltre il confine dell'invisibile»: incollalo in data-link (vuoto = pulsante nascosto) -->
+      <a class="btn-whatsapp" data-link="" hidden target="_blank" rel="noopener">Acquista su WhatsApp</a>
     </article>
   </div>
   <p class="nota">I libri sono disponibili in libreria.</p>
@@ -54,5 +63,9 @@
 </section>
 </main>
 <footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>
+<script>
+/* Mostra «Acquista su WhatsApp» solo per i libri con il link del catalogo in data-link */
+document.querySelectorAll('.btn-whatsapp').forEach(function(b){var l=(b.getAttribute('data-link')||'').trim();if(/^https:\/\//.test(l)){b.href=l;b.hidden=false;}});
+</script>
 </body>
 </html>

@@ -162,3 +162,11 @@ footer .piede-link{color:var(--rosa-scuro)}
 .link-premi{margin-top:18px}.link-premi a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--rosa-scuro);text-decoration:none;border-bottom:1px solid var(--oro)}
 .premio-poesia{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;max-width:30em;margin:0 auto .6em}.premio-poesia a{color:var(--rosa-scuro);text-decoration:none;border-bottom:1px solid var(--oro)}
 @media (max-width:820px){.foto-voce figure:not(.largo):first-child:nth-last-child(odd){grid-column:1/-1}}
+
+/* Galleria del libro e acquisto */
+.mini-galleria{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0 0}
+.mini-galleria a{display:block}
+.mini-galleria img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;border:1px solid rgba(201,161,74,.35)}
+.btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:.5em;margin-top:18px;padding:11px 24px;border:1px solid var(--oro);border-radius:999px;background:transparent;color:var(--rosa-scuro);font:600 .92rem 'Nunito',sans-serif;letter-spacing:.06em;text-decoration:none;transition:background .2s,color .2s}
+.btn-whatsapp:hover,.btn-whatsapp:focus-visible{background:var(--rosa-scuro);border-color:var(--rosa-scuro);color:#fff}
+.btn-whatsapp[hidden]{display:none}
