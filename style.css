@@ -170,3 +170,9 @@ footer .piede-link{color:var(--rosa-scuro)}
 .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:.5em;margin-top:18px;padding:11px 24px;border:1px solid var(--oro);border-radius:999px;background:transparent;color:var(--rosa-scuro);font:600 .92rem 'Nunito',sans-serif;letter-spacing:.06em;text-decoration:none;transition:background .2s,color .2s}
 .btn-whatsapp:hover,.btn-whatsapp:focus-visible{background:var(--rosa-scuro);border-color:var(--rosa-scuro);color:#fff}
 .btn-whatsapp[hidden]{display:none}
+/* Schede home: Poesie e opere / Premi */
+.schede-home{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:860px;margin:64px auto 0}
+.scheda-home{display:flex;flex-direction:column;align-items:center;text-align:center;background:#fffdf9;border:1px solid rgba(201,161,74,.6);border-radius:18px;padding:32px 26px 30px}
+.scheda-home h2{font-size:clamp(1.6rem,3vw,2rem)}
+.scheda-home .sottotitolo{margin:.5em 0 1.4em;flex:1;max-width:22em}
+@media (max-width:820px){.schede-home{grid-template-columns:1fr;gap:16px;margin-top:40px}.scheda-home{padding:26px 20px}}
