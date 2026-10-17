@@ -166,7 +166,7 @@ footer .piede-link{color:var(--rosa-scuro)}
 /* Galleria del libro e acquisto */
 .mini-galleria{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0 0}
 .mini-galleria a{display:block}
-.mini-galleria img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;border:1px solid rgba(201,161,74,.35)}
+.mini-galleria img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;border:1px solid rgba(201,161,74,.35)}
 .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:.5em;margin-top:18px;padding:11px 24px;border:1px solid var(--oro);border-radius:999px;background:transparent;color:var(--rosa-scuro);font:600 .92rem 'Nunito',sans-serif;letter-spacing:.06em;text-decoration:none;transition:background .2s,color .2s}
 .btn-whatsapp:hover,.btn-whatsapp:focus-visible{background:var(--rosa-scuro);border-color:var(--rosa-scuro);color:#fff}
 .btn-whatsapp[hidden]{display:none}
