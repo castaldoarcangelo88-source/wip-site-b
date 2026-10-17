@@ -123,3 +123,42 @@ footer .piede-link{color:var(--rosa-scuro)}
 .griglia-tv figure,.griglia-tv figure:nth-child(odd),.griglia-tv figure:nth-child(even){transform:none;min-width:0}
 .griglia-tv img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 @media (max-width:820px){.griglia-tv{grid-template-columns:1fr;gap:16px}.griglia-tv figure{padding:8px}}
+
+/* Premi, riconoscimenti e pubblicazioni */
+.pagina-premi main{max-width:860px;padding:24px 28px 40px}
+.premi-intro{text-align:center;margin-bottom:56px}
+.premi-intro .titolo-pagina{font-size:clamp(2rem,5.2vw,3rem);line-height:1.12;font-weight:600;max-width:16em;margin:0 auto}
+.premi-sottotitolo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--testo);opacity:.8}
+.linea-tempo{position:relative;border-left:1px solid rgba(201,161,74,.55);margin-left:6px;padding-left:40px}
+.anno{margin-bottom:64px}
+.anno-titolo{position:relative;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2.6rem,6vw,3.4rem);line-height:1;color:var(--rosa-scuro);letter-spacing:.04em;margin-bottom:28px}
+.anno-titolo::before{content:'';position:absolute;left:-46px;top:.45em;width:11px;height:11px;border-radius:50%;background:var(--crema);border:1px solid var(--oro)}
+.voci{list-style:none}
+.voce{padding:0 0 36px;margin-bottom:36px;border-bottom:1px solid rgba(201,161,74,.25)}
+.voce:last-child{border-bottom:0;margin-bottom:0}
+.voce-data{font:600 .78rem 'Nunito',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--oro)}
+.voce-tipo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--rosa-scuro);margin:.35em 0 .1em}
+.voce h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.45rem,3.4vw,1.8rem);line-height:1.2;color:var(--testo)}
+.voce-testo{margin-top:.45em;line-height:1.65;font-size:1rem;max-width:36em}
+.voce-link{margin-top:.8em}
+.voce-link a{font-weight:600;color:var(--rosa-scuro);text-decoration:none;border-bottom:1px solid var(--oro);padding-bottom:1px}
+.foto-voce{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.foto-voce figure{margin:0;min-width:0}
+.foto-voce figure.largo{grid-column:1/-1}
+.foto-voce a{display:block}
+.foto-voce img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid rgba(201,161,74,.3)}
+.foto-voce figure:not(.largo) img{aspect-ratio:4/5;object-fit:cover}
+.foto-voce figure.largo img{max-width:640px}
+.pagina-premi .nota{text-align:center;margin-top:40px}
+.riquadro-opere .btn-premi{margin-top:12px}
+@media (max-width:820px){
+ .pagina-premi main{padding:16px 20px 32px}
+ .premi-intro{margin-bottom:40px}
+ .linea-tempo{padding-left:22px;margin-left:2px}
+ .anno-titolo::before{left:-28px;width:9px;height:9px}
+ .anno{margin-bottom:48px}
+ .foto-voce{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+}
+.link-premi{margin-top:18px}.link-premi a{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--rosa-scuro);text-decoration:none;border-bottom:1px solid var(--oro)}
+.premio-poesia{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;max-width:30em;margin:0 auto .6em}.premio-poesia a{color:var(--rosa-scuro);text-decoration:none;border-bottom:1px solid var(--oro)}
+@media (max-width:820px){.foto-voce figure:not(.largo):first-child:nth-last-child(odd){grid-column:1/-1}}
