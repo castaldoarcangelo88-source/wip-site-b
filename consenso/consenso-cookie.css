@@ -1,0 +1,18 @@
+/* Banner cookie: eredita colori e caratteri del sito tramite variabili CSS (con valori di riserva). */
+.cc-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:2147483000;max-width:960px;margin:0 auto;
+  background:var(--cc-sfondo,var(--c-piede-sfondo,#0D0F12));color:var(--cc-testo,var(--c-piede-testo,#F2F2F2));
+  border:1px solid var(--cc-bordo,var(--c-piede-bordo,rgba(255,255,255,.15)));border-radius:var(--angoli,12px);
+  box-shadow:0 10px 40px rgba(0,0,0,.35);font-family:var(--font-testo,system-ui,sans-serif);font-size:.92rem;line-height:1.5}
+.cc-banner[hidden]{display:none}
+.cc-contenuto{display:flex;align-items:center;gap:1rem 1.25rem;padding:1rem 1.25rem;flex-wrap:wrap}
+.cc-logo{flex:0 0 auto;width:40px;height:40px;object-fit:contain}
+.cc-testo{flex:1 1 380px;margin:0}
+.cc-testo a{color:inherit;text-decoration:underline}
+.cc-pulsanti{display:flex;gap:.75rem;flex:0 0 auto}
+/* Accetta e Rifiuta: stesso stile, stessa dimensione, stessa evidenza */
+.cc-btn{min-width:120px;min-height:44px;padding:.6rem 1.2rem;font:inherit;font-weight:600;cursor:pointer;
+  background:var(--cc-btn-sfondo,var(--c-bottone,#F2F2F2));color:var(--cc-btn-testo,var(--c-testo-bottone,#0D0F12));
+  border:1px solid var(--cc-btn-sfondo,var(--c-bottone,#F2F2F2));border-radius:var(--angoli,8px)}
+.cc-btn:hover{opacity:.88}
+.cc-btn:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media (max-width:560px){.cc-pulsanti{width:100%}.cc-btn{flex:1}}

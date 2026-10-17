@@ -80,3 +80,35 @@ footer{text-align:center;padding:24px;font-size:.9rem;opacity:.75}
 .banner-handimap .hm-card:hover,.banner-handimap .hm-card:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(184,92,110,.2)}
 .banner-handimap img{display:block;height:44px;width:auto;max-width:100%;object-fit:contain}
 .banner-handimap .hm-cta{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;text-decoration:none;color:var(--rosa-scuro)}
+/* Poesie e opere, poesia, cookie policy */
+.riquadro-opere{margin:60px auto 0;max-width:640px;text-align:center;background:#fffdf9;border:1px solid var(--oro);border-radius:20px;padding:30px 20px;box-shadow:0 6px 18px rgba(184,92,110,.12)}
+.riquadro-opere .sottotitolo{margin:.4em 0 1.2em}
+.btn-opere{display:inline-block;font:600 1.05rem 'Nunito',sans-serif;color:#fff;text-decoration:none;padding:14px 28px;border-radius:999px;background:linear-gradient(135deg,var(--rosa-scuro),#d98a8a);box-shadow:0 10px 25px rgba(184,92,110,.3)}
+.btn-opere:hover{transform:translateY(-2px)}
+footer .piede-link{color:var(--rosa-scuro)}
+.testata{position:relative;text-align:center;padding:22px 16px 6px}
+.testata a{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.3rem;color:var(--testo);text-decoration:none}
+.testata span{font-family:'Great Vibes',cursive;font-weight:400;font-size:1.5em;color:var(--rosa-scuro)}
+.pagina main{max-width:880px;padding-top:24px}
+.titolo-pagina{text-align:center;color:var(--rosa-scuro);font-size:clamp(2rem,6vw,3.2rem)}
+.pagina .fregio{text-align:center}
+.etichetta{font:600 .78rem 'Nunito',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);text-align:center;margin-bottom:.6em}
+.poesia{text-align:center;padding-bottom:40px}
+.versi{display:inline-block;text-align:left;max-width:100%;margin:16px auto 10px;font-family:'Cormorant Garamond',serif;font-size:1.32rem;line-height:1.6}
+.strofa{margin:0 0 1.3em}
+.firma{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--rosa-scuro);margin:.2em 0 .8em}
+.opere-sezione{margin:44px 0 0;text-align:center}
+.schede{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:720px;margin:22px auto 0}
+.schede-una{grid-template-columns:1fr;max-width:400px}
+.scheda{display:block;background:#fffdf9;border:1px solid var(--oro);border-radius:18px;padding:20px;text-decoration:none;color:var(--testo);box-shadow:0 6px 18px rgba(184,92,110,.12)}
+.scheda h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin:.5em 0 .1em}
+.scheda-poesia h3{margin-top:0}
+.scheda-poesia .btn-opere{margin-top:14px}
+.copertina{aspect-ratio:3/4;overflow:hidden;border-radius:12px;background:#f3e6dc}
+.copertina img{width:100%;height:100%;object-fit:cover;display:block}
+.editore{font-style:italic;color:var(--rosa-scuro)}
+.nota{margin-top:22px}
+.testo-policy{background:#fffdf9;border:1px solid var(--oro);border-radius:18px;padding:26px 24px;line-height:1.7}
+.testo-policy h2{font-size:1.5rem;margin:1.1em 0 .3em}
+.testo-policy a{color:var(--rosa-scuro)}
+@media (max-width:640px){.schede{grid-template-columns:1fr;max-width:400px}.versi{font-size:1.22rem}.testo-policy{padding:20px 16px}}

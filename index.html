@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Il Mondo di Baby Pepita – Stiamo arrivando</title>
 <meta name="description" content="Il Mondo di Baby Pepita: stiamo arrivando. Un regalo per Manilla.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="consenso/consenso-cookie.css">
+<script src="consenso/consenso-cookie.js" data-ga-id="G-HYYZ6MDRPR" data-informativa="cookie.html" data-nome-sito="Il Mondo di Baby Pepita"></script>
 </head>
 <body>
 <div class="coriandoli" aria-hidden="true"></div>
@@ -46,6 +46,12 @@
     </div>
   </section>
 
+  <section class="riquadro-opere" aria-label="Poesie e opere">
+    <h2>Poesie e opere</h2>
+    <p class="sottotitolo">Le poesie e i libri di Manilla, raccolti in una pagina</p>
+    <a class="btn-opere" href="opere.html">Poesie e opere</a>
+  </section>
+
   <section class="messaggio">
     <p>“Ogni grande avventura comincia con un piccolo passo.<br>Il nostro sta per arrivare.”</p>
   </section>
@@ -57,7 +63,7 @@
     </a>
   </aside>
 </main>
-<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla</footer>
+<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>
 
 <div id="yt-wrap" class="yt-wrap" aria-hidden="true"><div id="yt"></div></div>
 <script>
@@ -65,7 +71,7 @@ var errore=false,MSG="Non riesco a caricare la canzone in questo momento.";
 var player, pronto=false, voluto=false, muto=false;
 var VID='9OEeyOqW85I';
 var btn=document.getElementById('play'), mute=document.getElementById('mute'), stato=document.getElementById('stato');
-var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+var ytCaricato=false;function caricaYT(){if(ytCaricato)return;ytCaricato=true;var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';tag.onerror=function(){errore=true;stato.textContent=MSG;};document.head.appendChild(tag);}
 function onYouTubeIframeAPIReady(){
   player=new YT.Player('yt',{width:'200',height:'200',videoId:VID,
     playerVars:{autoplay:0,loop:1,playlist:VID,controls:0,playsinline:1,rel:0,modestbranding:1},
@@ -79,7 +85,7 @@ function onYouTubeIframeAPIReady(){
 }
 function avvia(){player.unMute();player.setVolume(80);player.playVideo();muto=false;aggiornaMute();}
 btn.addEventListener('click',function(){
-  voluto=true;if(errore){stato.textContent=MSG;return;}if(!pronto){stato.textContent="Sto caricando la musica…";return;}
+  voluto=true;if(errore){stato.textContent=MSG;return;}if(!pronto){caricaYT();stato.textContent="Sto caricando la musica…";return;}
   if(player.getPlayerState()===YT.PlayerState.PLAYING)player.pauseVideo();else avvia();
 });
 function aggiornaMute(){mute.textContent=muto?'🔇':'🔊';mute.setAttribute('aria-label',muto?'Riattiva audio':'Disattiva audio');}
