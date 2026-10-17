@@ -112,3 +112,9 @@ footer .piede-link{color:var(--rosa-scuro)}
 .testo-policy h2{font-size:1.5rem;margin:1.1em 0 .3em}
 .testo-policy a{color:var(--rosa-scuro)}
 @media (max-width:640px){.schede{grid-template-columns:1fr;max-width:400px}.versi{font-size:1.22rem}.testo-policy{padding:20px 16px}}
+
+/* Dicono di lei */
+.dicono-di-lei{margin-top:70px}
+.intervista{max-width:640px;margin:0 auto 28px;background:#fffdf9;border:1px solid var(--oro);border-radius:20px;padding:24px 20px;box-shadow:0 6px 18px rgba(184,92,110,.12)}
+.intervista h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--testo);margin:.2em 0 1em}
+.griglia picture{display:block}
