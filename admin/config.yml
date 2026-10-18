@@ -1,0 +1,41 @@
+# Pannello di Manilla – Decap CMS
+# Accesso: GitHub. Per entrare dal sito serve un piccolo "ponte" OAuth (vedi tools/PANNELLO.md):
+# finché base_url non è impostato, il pannello funziona solo in prova locale.
+backend:
+  name: github
+  repo: castaldoarcangelo88-source/wip-site-b
+  branch: main
+  # base_url: https://pannello-oauth.ESEMPIO.workers.dev   # da impostare quando si attiva il ponte OAuth
+  commit_messages:
+    create: "Blog: nuovo articolo «{{slug}}»"
+    update: "Blog: modifica «{{slug}}»"
+    delete: "Blog: eliminato «{{slug}}»"
+    uploadMedia: "Blog: immagine {{path}}"
+    deleteMedia: "Blog: tolta immagine {{path}}"
+# Con il flusso "editoriale" ogni articolo resta una bozza finché Manilla non preme "Pubblica"
+publish_mode: editorial_workflow
+local_backend: true
+locale: it
+site_url: https://ilmondodibabypepita.it
+display_url: https://ilmondodibabypepita.it
+logo_url: https://ilmondodibabypepita.it/favicon.svg
+media_folder: immagini-caricate
+public_folder: /immagini-caricate
+collections:
+  - name: articoli
+    label: Articoli del blog
+    label_singular: Articolo
+    folder: _articoli
+    create: true
+    delete: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{titolo}} · {{data | date('DD/MM/YYYY')}}"
+    sortable_fields: [data, titolo]
+    fields:
+      - {label: Titolo, name: titolo, widget: string}
+      - {label: Data, name: data, widget: datetime, format: "YYYY-MM-DD HH:mm:ss", date_format: "DD/MM/YYYY", time_format: "HH:mm"}
+      - {label: Categorie, name: categorie, widget: select, multiple: true, required: false, options: ["Chiacchiericci", "Libri & Film", "Poesie", "Collaborazione", "Make-up", "Food", "Cose di casa", "Generica"]}
+      - {label: "Foto di copertina", name: copertina, widget: image, required: false, choose_url: false}
+      - {label: "Descrizione della foto (per chi non vede)", name: alt_copertina, widget: string, required: false, hint: "Es.: Manilla con il suo libro tra le mani"}
+      - {label: "Riassunto per Google", name: descrizione, widget: text, required: false, hint: "Una o due frasi. Se lo lasci vuoto lo prendiamo dall'inizio dell'articolo."}
+      - {label: Testo, name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list], editor_components: [image], modes: [rich_text]}
