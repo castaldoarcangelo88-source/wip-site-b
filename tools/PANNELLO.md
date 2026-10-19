@@ -25,7 +25,31 @@
 - Limite onesto: con `write` Manilla *tecnicamente* potrebbe modificare altri file via git/API fuori dal pannello;
   il controllo lo rende visibile e ogni modifica è un commit revertibile, ma non lo impedisce.
 
-## Checklist di attivazione
+## Stato finale (19/10/2026, ore 10:52 ora di Roma) – PANNELLO ATTIVO
+- Worker OAuth: https://decap-oauth-babypepita.castaldoarcangelo88.workers.dev (segreti GITHUB_CLIENT_ID /
+  GITHUB_CLIENT_SECRET impostati; `/auth` → 302 verso GitHub, client_id `Ov23lirSwyiTG8ZMs6i9`, scope `public_repo`).
+  Origini ammesse: https://ilmondodibabypepita.it e https://www.ilmondodibabypepita.it.
+- OAuth App GitHub «Pannello blog Baby Pepita», callback `…workers.dev/callback`. «Expire user access tokens» attivo:
+  il token dura 8 ore e Decap non lo rinnova, quindi dopo 8 ore Manilla deve rifare «Accedi con GitHub».
+- `admin/config.yml`: backend github, repo `castaldoarcangelo88-source/wip-site-b`, branch `main`,
+  `base_url` = Worker, `auth_endpoint: auth`, `publish_mode: editorial_workflow`.
+- `admin/index.html`: `noindex, nofollow`; Decap 3.3.3 da unpkg con SRI
+  `sha384-Ch3bpZcxxjHMuIde+QMTyDdxGqjtafFkpoGgvLjf50nHhptNH7bZyPTyKSkOvEo+`. /admin non è in sitemap.xml.
+  Per aggiornare Decap: cambiare versione **e** ricalcolare l'hash
+  (`curl -sL URL | openssl dgst -sha384 -binary | base64`), altrimenti il pannello non si carica.
+- Merge su main: commit `72bc49a` (merge di `pannello-manilla` @ `272aa94`). Il ramo `poesia-premio` NON è incluso.
+- Ruleset «Proteggi main» (id 25389252) attivo: niente force push né cancellazione di main.
+- Invito a Manilla86 con permesso `write` (invito id 338471430, inviato il 19/10/2026; scade dopo 7 giorni se non accettato).
+- Verificato: https://ilmondodibabypepita.it/admin/ → 200, Decap si carica e «Accedi con GitHub» apre il login GitHub.
+
+### Tornare indietro (pannello intero)
+1. `git revert -m 1 72bc49a` e push normale su main (toglie /admin, Action e strumenti).
+2. Togliere l'invito/accesso: `gh api -X DELETE repos/castaldoarcangelo88-source/wip-site-b/invitations/338471430`
+   (se già accettato: `gh api -X DELETE repos/castaldoarcangelo88-source/wip-site-b/collaborators/Manilla86`).
+3. GitHub → Settings → Developer settings → OAuth Apps → «Pannello blog Baby Pepita» → «Revoke all user tokens»
+   (ed eventualmente elimina l'app); su Cloudflare si può eliminare il Worker `decap-oauth-babypepita`.
+
+## Checklist di attivazione (storico)
 ### A. Dal Titolare (Arcangelo)
 - [ ] Account Cloudflare gratuito creato **da lui**, con login fatto da lui sul suo computer (email + 2FA suoi).
 - [ ] Login GitHub come `castaldoarcangelo88-source` (per OAuth App e per lanciare lo script).
