@@ -213,3 +213,5 @@ footer .piede-link{color:var(--rosa-scuro)}
 .articolo-testo figcaption{text-align:center;font-style:italic;font-size:.92rem;opacity:.8;margin-top:-12px;margin-bottom:18px}
 .pagina-blog .nota{text-align:center;margin-top:40px}
 @media (max-width:820px){.pagina-blog main{padding:16px 20px 32px}.post{gap:14px}.post-img{flex-basis:72px;height:72px}.post-titolo{font-size:1.18rem}.articolo-testo{font-size:1.02rem}}
+/* Home con quattro schede: griglia 2×2 su desktop */
+@media (min-width:981px){.schede-home.schede-quattro{grid-template-columns:repeat(2,minmax(0,1fr));max-width:860px}}
