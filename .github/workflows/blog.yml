@@ -1,0 +1,24 @@
+name: Genera blog
+on:
+  push:
+    branches: [main]
+    paths: ["_articoli/**", "immagini-caricate/**", "tools/genera_blog.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: genera-blog, cancel-in-progress: false }
+jobs:
+  genera:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install markdown==3.7 pyyaml==6.0.2 beautifulsoup4==4.12.3 pillow==11.0.0
+      - run: python3 tools/genera_blog.py
+      - name: Salva le pagine generate
+        run: |
+          git config user.name "Arcangelo"
+          git config user.email "castaldoarcangelo88@gmail.com"
+          git add blog blog.html sitemap.xml
+          git diff --cached --quiet && echo "Niente da aggiornare" || (git commit -m "Blog: pagine generate dal pannello" && git push)

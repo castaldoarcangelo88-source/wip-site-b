@@ -1,0 +1,26 @@
+name: Controllo percorsi pannello
+# Le modifiche di Manilla (PR del flusso editoriale Decap, rami cms/**) possono toccare SOLO
+# _articoli/ e immagini-caricate/. Se tocca altro, il controllo fallisce e la PR va rivista dal Titolare.
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  percorsi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Verifica file modificati
+        env:
+          AUTORE: ${{ github.actor }}
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          RAMO: ${{ github.head_ref }}
+        run: |
+          if [ "$AUTORE" != "Manilla86" ] && [[ "$RAMO" != cms/* ]]; then echo "Non è una modifica dal pannello: ok"; exit 0; fi
+          FUORI=$(git diff --name-only "$BASE" "$HEAD" | grep -Ev '^(_articoli|immagini-caricate)/' || true)
+          if [ -n "$FUORI" ]; then echo "::error::File fuori dall'area articoli/immagini:"; echo "$FUORI"; exit 1; fi
+          echo "Solo articoli e immagini: ok"
