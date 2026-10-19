@@ -1,11 +1,12 @@
 # Pannello di Manilla – Decap CMS
 # Accesso: GitHub. Per entrare dal sito serve un piccolo "ponte" OAuth (vedi tools/PANNELLO.md):
-# finché base_url non è impostato, il pannello funziona solo in prova locale.
+# Ponte attivo: Worker decap-oauth-babypepita su Cloudflare (OAuth App «Pannello blog Baby Pepita»).
 backend:
   name: github
   repo: castaldoarcangelo88-source/wip-site-b
   branch: main
-  # base_url: https://pannello-oauth.ESEMPIO.workers.dev   # da impostare quando si attiva il ponte OAuth
+  base_url: https://decap-oauth-babypepita.castaldoarcangelo88.workers.dev   # ponte OAuth (Cloudflare Worker)
+  auth_endpoint: auth
   commit_messages:
     create: "Blog: nuovo articolo «{{slug}}»"
     update: "Blog: modifica «{{slug}}»"
