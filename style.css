@@ -230,3 +230,7 @@ footer .piede-link{color:var(--rosa-scuro)}
 .trascrizione-testo .tr-firma{text-align:right}
 .trascrizione-testo .tr-nota{font-size:.85rem;opacity:.75;font-style:italic}
 @media (max-width:820px){.foto-voce figure.lettera{max-width:100%}.trascrizione-testo .tr-data,.trascrizione-testo .tr-firma{text-align:left}}
+/* Video nelle voci della cronologia */
+.video-voce{margin-top:22px;max-width:640px}
+.video-voce video{display:block;width:100%;height:auto;border-radius:4px;border:1px solid rgba(201,161,74,.3);background:#000}
+.video-didascalia{font-size:.85rem;opacity:.75;margin-top:8px;font-style:italic}
