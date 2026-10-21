@@ -238,3 +238,4 @@ footer .piede-link{color:var(--rosa-scuro)}
 /* Link del footer comodi da toccare (almeno 48px) */
 footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
 .testata a{display:inline-flex;align-items:center;min-height:48px}
+@media (min-width:821px){.schede-home .scheda-home:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 12px)}}
