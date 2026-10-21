@@ -234,3 +234,7 @@ footer .piede-link{color:var(--rosa-scuro)}
 .video-voce{margin-top:22px;max-width:640px}
 .video-voce video{display:block;width:100%;height:auto;border-radius:4px;border:1px solid rgba(201,161,74,.3);background:#000}
 .video-didascalia{font-size:.85rem;opacity:.75;margin-top:8px;font-style:italic}
+
+/* Link del footer comodi da toccare (almeno 48px) */
+footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
+.testata a{display:inline-flex;align-items:center;min-height:48px}
