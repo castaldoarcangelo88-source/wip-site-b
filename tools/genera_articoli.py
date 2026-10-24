@@ -5,7 +5,7 @@ data AAAA-MM-GG oppure "" se non confermata) e lancia: python3 tools/genera_arti
 import json, html, re, pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
 MESI = "gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
-URL = "https://ilmondodibabypepita.it/interviste-articoli.html"
+URL = "https://manillacastaldo.it/interviste-articoli.html"
 art = json.loads((R/"dati/articoli.json").read_text())
 e = lambda s: html.escape(s, quote=True)
 def data_it(d):
@@ -26,9 +26,9 @@ for sez in ("labirinti", "oltre", "handimap"):
     t = re.sub(rf"(<!-- ARTICOLI:{sez} -->).*?(<!-- /ARTICOLI:{sez} -->)", lambda m: m.group(1)+"\n"+schede(sez)+"\n      "+m.group(2), t, flags=re.S)
 items = [{"@type": "ListItem", "position": i+1, "item": {"@type": "Article", "headline": x["titolo"], "url": x["url"],
           "publisher": {"@type": "Organization", "name": x["testata"]}, **({"datePublished": x["data"]} if x["data"] else {}),
-          "about": {"@id": "https://ilmondodibabypepita.it/#manilla"}}} for i, x in enumerate(art)]
+          "about": {"@id": "https://manillacastaldo.it/#manilla"}}} for i, x in enumerate(art)]
 lista = {"@type": "ItemList", "name": "Interviste e articoli su Manilla", "numberOfItems": len(art), "itemListElement": items}
-t = re.sub(r'("about": \{"@id": "https://ilmondodibabypepita.it/#manilla"\})(,\n   "mainEntity": .*?)?\n  \}\n \]',
+t = re.sub(r'("about": \{"@id": "https://manillacastaldo.it/#manilla"\})(,\n   "mainEntity": .*?)?\n  \}\n \]',
            lambda m: m.group(1)+',\n   "mainEntity": '+json.dumps(lista, ensure_ascii=False)+'\n  }\n ]', t, count=1, flags=re.S)
 p.write_text(t)
 print("ok,", len(art), "articoli")

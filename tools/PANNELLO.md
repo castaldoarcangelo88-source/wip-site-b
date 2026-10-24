@@ -1,7 +1,7 @@
 # Pannello di Manilla (Decap CMS) – come funziona
 
 ## Per Manilla
-1. Apre https://ilmondodibabypepita.it/admin/ e preme «Accedi con GitHub» (account GitHub suo, gratuito).
+1. Apre https://manillacastaldo.it/admin/ e preme «Accedi con GitHub» (account GitHub suo, gratuito).
 2. «Nuovo Articolo»: titolo, data, categorie, foto di copertina, descrizione della foto, testo.
 3. «Salva»: resta una bozza (nessuno la vede sul sito).
 4. Quando è pronta: stato «Pronto» → «Pubblica». In 1–3 minuti l'articolo compare nel blog.
@@ -28,7 +28,7 @@
 ## Stato finale (19/10/2026, ore 10:52 ora di Roma) – PANNELLO ATTIVO
 - Worker OAuth: https://decap-oauth-babypepita.castaldoarcangelo88.workers.dev (segreti GITHUB_CLIENT_ID /
   GITHUB_CLIENT_SECRET impostati; `/auth` → 302 verso GitHub, client_id `Ov23lirSwyiTG8ZMs6i9`, scope `public_repo`).
-  Origini ammesse: https://ilmondodibabypepita.it e https://www.ilmondodibabypepita.it.
+  Origini ammesse: https://manillacastaldo.it e https://www.manillacastaldo.it (durante la migrazione anche https://ilmondodibabypepita.it e https://www.ilmondodibabypepita.it).
 - OAuth App GitHub «Pannello blog Baby Pepita», callback `…workers.dev/callback`. «Expire user access tokens» attivo:
   il token dura 8 ore e Decap non lo rinnova, quindi dopo 8 ore Manilla deve rifare «Accedi con GitHub».
 - `admin/config.yml`: backend github, repo `castaldoarcangelo88-source/wip-site-b`, branch `main`,
@@ -40,7 +40,7 @@
 - Merge su main: commit `72bc49a` (merge di `pannello-manilla` @ `272aa94`). Il ramo `poesia-premio` NON è incluso.
 - Ruleset «Proteggi main» (id 25389252) attivo: niente force push né cancellazione di main.
 - Invito a Manilla86 con permesso `write` (invito id 338471430, inviato il 19/10/2026; scade dopo 7 giorni se non accettato).
-- Verificato: https://ilmondodibabypepita.it/admin/ → 200, Decap si carica e «Accedi con GitHub» apre il login GitHub.
+- Verificato: https://manillacastaldo.it/admin/ → 200, Decap si carica e «Accedi con GitHub» apre il login GitHub.
 
 ### Tornare indietro (pannello intero)
 1. `git revert -m 1 72bc49a` e push normale su main (toglie /admin, Action e strumenti).
@@ -58,10 +58,10 @@
 1. [ ] Cloudflare → Workers & Pages → Create → Worker da template/repo `sveltia-cms-auth` (o `decap-proxy`);
        nome es. `pannello-oauth` → URL `https://pannello-oauth.<account>.workers.dev`.
 2. [ ] GitHub → Settings → Developer settings → OAuth Apps → New OAuth App:
-       Homepage `https://ilmondodibabypepita.it`, Authorization callback URL `https://pannello-oauth.<account>.workers.dev/callback`.
+       Homepage `https://manillacastaldo.it`, Authorization callback URL `https://pannello-oauth.<account>.workers.dev/callback`.
        Genera il Client secret.
 3. [ ] Worker → Settings → Variables and Secrets: `GITHUB_CLIENT_ID` e `GITHUB_CLIENT_SECRET` (tipo *Secret*);
-       se il template lo prevede `ALLOWED_DOMAINS=ilmondodibabypepita.it`. Deploy.
+       se il template lo prevede `ALLOWED_DOMAINS=manillacastaldo.it,ilmondodibabypepita.it`. Deploy.
 4. [ ] Lanciare `tools/attiva-pannello.sh https://pannello-oauth.<account>.workers.dev` (chiede conferma):
        crea il ruleset su main, invita Manilla86 (write), stampa i passi finali.
 5. [ ] Impostare `base_url` in `admin/config.yml`, merge di `pannello-manilla` su main, verificare che
@@ -69,7 +69,7 @@
 
 ### C. Cosa riceve Manilla
 - [ ] Email di invito GitHub → accettare (o https://github.com/castaldoarcangelo88-source/wip-site-b/invitations).
-- [ ] Link del pannello: https://ilmondodibabypepita.it/admin/ → «Accedi con GitHub».
+- [ ] Link del pannello: https://manillacastaldo.it/admin/ → «Accedi con GitHub».
 - [ ] Prova guidata: una bozza → «Pronto» → «Pubblica» → articolo online in 1–3 minuti.
 
 ## Prova in locale

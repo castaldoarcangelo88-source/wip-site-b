@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from PIL import Image,ImageOps
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-B="https://ilmondodibabypepita.it/"
+B="https://manillacastaldo.it/"
 MESI="gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
 ALLOWED={"p","br","strong","b","em","i","u","a","h2","h3","h4","ul","ol","li","blockquote","img","figure","figcaption"}
 def dit(d): return f"{int(d[8:10])} {MESI[int(d[5:7])-1]} {d[:4]}"
@@ -51,7 +51,7 @@ def pulisci(md_text,titolo):
       if not href or href.lower().startswith(("javascript","data:","vbscript")): t.unwrap(); continue
       m=re.match(r"https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)",href)
       keep["href"]=href
-      if href.startswith("http") and "ilmondodibabypepita.it" not in href:
+      if href.startswith("http") and "manillacastaldo.it" not in href and "ilmondodibabypepita.it" not in href:
         keep["target"]="_blank"; keep["rel"]="sponsored nofollow noopener" if re.search(r"amazon\.|amzn\.to",href) else "nofollow noopener"
     elif t.name=="img": keep={k:t[k] for k in ("src","alt","width","height","loading","decoding")}
     t.attrs=keep
@@ -92,7 +92,7 @@ def pagina(prefix,title,desc,path,ogimg,ogtype,ld,body):
 {json.dumps(ld,ensure_ascii=False,indent=1)}
 </script>
 '''
-  footer=f'<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="{prefix}cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>'
+  footer=f'<footer>© 2026 Il Mondo di Baby Pepita · manillacastaldo.it · fatto con ♥ per Manilla<br><a class="piede-link" href="{prefix}cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>'
   return TESTA.format(p=prefix,v=css_ver())+meta+'</head>\n<body class="pagina pagina-blog">\n<header class="testata"><a href="'+(prefix or "./")+'">Il Mondo di <span>Baby Pepita</span></a></header>\n<main>\n'+body+'\n</main>\n'+footer+'\n</body>\n</html>\n'
 PERSON={"@type":"Person","@id":B+"#manilla","name":"Manilla","url":B}
 def leggi_md(f):
@@ -163,7 +163,7 @@ def main():
   ld={"@context":"https://schema.org","@type":"Blog","name":"Il blog di Manilla","url":B+"blog.html","inLanguage":"it","author":PERSON,"blogPost":[{"@type":"BlogPosting","headline":a["titolo"][:110],"datePublished":a["data"][:10],"url":B+f"blog/{a['slug']}.html"} for a in arts[:20]]}
   open("blog.html","w").write(pagina("","Il blog di Manilla · Il Mondo di Baby Pepita",f"Il blog di Manilla: {len(arts)} articoli tra pensieri, racconti, recensioni e riflessioni, dal {primo} al {max(anni)}.","blog.html",B+"assets/og-manilla.jpg","website",ld,body))
   sm=open("sitemap.xml").read()
-  sm=re.sub(r'\s*<url><loc>https://ilmondodibabypepita\.it/blog/[^<]*</loc>.*?</url>','',sm)
+  sm=re.sub(r'\s*<url><loc>https://manillacastaldo\.it/blog/[^<]*</loc>.*?</url>','',sm)
   add="".join(f'\n  <url><loc>{B}blog/{a["slug"]}.html</loc><lastmod>{a["data"][:10]}</lastmod></url>' for a in sorted(arts,key=lambda a:a["data"]))
   sm=sm.replace("\n</urlset>",add+"\n</urlset>")
   open("sitemap.xml","w").write(sm)

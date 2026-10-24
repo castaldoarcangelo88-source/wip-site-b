@@ -35,6 +35,6 @@ cat <<TXT
 - Controlla che la OAuth App GitHub abbia callback: $URL/callback
 - Sul Worker devono esserci i segreti GITHUB_CLIENT_ID e GITHUB_CLIENT_SECRET.
 - Manilla: accetta l'invito su https://github.com/$REPO/invitations, poi apre
-  https://ilmondodibabypepita.it/admin/ → «Accedi con GitHub».
+  https://manillacastaldo.it/admin/ → «Accedi con GitHub».
 - Prova: una bozza, «Pubblica», verifica il blog dopo 1–3 minuti.
 TXT

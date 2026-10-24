@@ -17,9 +17,9 @@ backend:
 publish_mode: editorial_workflow
 local_backend: true
 locale: it
-site_url: https://ilmondodibabypepita.it
-display_url: https://ilmondodibabypepita.it
-logo_url: https://ilmondodibabypepita.it/favicon.svg
+site_url: https://manillacastaldo.it
+display_url: https://manillacastaldo.it
+logo_url: https://manillacastaldo.it/favicon.svg
 media_folder: immagini-caricate
 public_folder: /immagini-caricate
 collections:

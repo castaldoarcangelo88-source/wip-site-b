@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ilmondodibabypepita.it/sitemap.xml
+Sitemap: https://manillacastaldo.it/sitemap.xml
