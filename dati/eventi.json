@@ -1,0 +1,61 @@
+[
+ {
+  "id": "est-2026",
+  "data": "2026-10-23",
+  "titolo": "Fiera EST – Napoli Innovation Festival",
+  "luogo": "Fabbrica Italiana dell'Innovazione",
+  "indirizzo": "Via Ponte dei Granili 32",
+  "citta": "Napoli",
+  "testo": "❤️♿ Da un'idea nata dalla mia esperienza a un progetto che continua a crescere.\n\nFelice di aver raccontato HandiMap.it insieme ad Arcangelo a EST – Napoli Innovation Festival. 💙\n\nGrazie per aver dato voce all'accessibilità e per questa bella occasione di confronto! ❤️\n\n#HandiMap #Accessibilità #Inclusione #NapoliEst #NapoliInnovationFestival",
+  "foto": [
+   {
+    "src": "assets/eventi/est-04-intervento.webp",
+    "alt": "Manilla in carrozzina e Arcangelo con il microfono presentano HandiMap davanti allo schermo con la slide «Da dove nasce HandiMap»",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-06-sala.webp",
+    "alt": "Arcangelo accanto a Manilla durante la presentazione di HandiMap, con la slide del panel sullo schermo",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-08-rollup.webp",
+    "alt": "Roll-up di HandiMap «Insieme costruiamo città più accessibili» con la foto di Manilla, accanto a una cassa audio",
+    "width": 720,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-03-tavolo.webp",
+    "alt": "Tavolo dei relatori con braccialetti di HandiMap, cartoline di EST, pezzi di puzzle colorati e bottiglie d'acqua",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-05-materiali.webp",
+    "alt": "Cartoline di HandiMap con codice QR e braccialetti verdi «Seguici su HandiMap», accanto ai pieghevoli di EST",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-01-telo.webp",
+    "alt": "Telo rosa di EST – Napoli Innovation Festival alla Fabbrica Italiana dell'Innovazione",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-07-fabbrica.webp",
+    "alt": "Parete verde con la scritta «Fabbrica Italiana dell'Innovazione», con tavolo e sedie bianche",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/est-02-spici.webp",
+    "alt": "Roll-up di Spici, società per innovazione, cooperazione e internazionalizzazione, all'evento",
+    "width": 591,
+    "height": 1280
+   }
+  ]
+ }
+]
