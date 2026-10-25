@@ -52,8 +52,103 @@
    },
    {
     "src": "assets/eventi/est-02-spici.webp",
-    "alt": "Roll-up di Spici, società per innovazione, cooperazione e internazionalizzazione, all'evento",
+    "alt": "Roll-up dell'evento con la mappa luminosa e i servizi dell'organizzazione",
     "width": 591,
+    "height": 1280
+   }
+  ]
+ },
+ {
+  "id": "centro-ippico-smcv-2026",
+  "data": "2026-05-30",
+  "titolo": "HandiMap al Centro Regionale di Incremento Ippico",
+  "luogo": "Centro Regionale di Incremento Ippico",
+  "indirizzo": "",
+  "citta": "Santa Maria Capua Vetere",
+  "testo": "30 maggio 2026 un evento ✨ Ieri abbiamo vissuto una mattinata che porteremo a lungo nel cuore. ✨\n\nSiamo stati accolti presso il Centro Regionale di Incremento Ippico di Santa Maria Capua Vetere dalla Dottoressa Rinaldi, che desideriamo ringraziare sinceramente per la disponibilità, l’attenzione e il tempo prezioso che ci ha dedicato. 🌷\n\n💙 Con grande apertura e sensibilità, ci ha dato l’opportunità di raccontare HandiMap e la storia che ha ispirato la nascita del progetto, in un confronto autentico, ricco di ascolto, condivisione e valore umano.\n\n🌱 Durante l’incontro abbiamo scoperto una realtà che custodisce con passione una parte importante della storia del nostro territorio. \nTra scuderie e paddock abbiamo ammirato i magnifici cavalli di razza Salernitana, simbolo di una tradizione che il Centro continua a preservare, curare e valorizzare con grande dedizione.\n\n🏛️ Emozionante anche la visita al Museo delle Carrozze, dove carrozze storiche, finimenti, uniformi e stampe d’epoca raccontano il legame di questi luoghi con i Borbone e con il Regno delle Due Sicilie.\n\n📜 Un ringraziamento particolare va anche alla professionista che ci ha accompagnato durante la visita, guidandoci con grande gentilezza, competenza e passione. Attraverso i suoi racconti abbiamo potuto conoscere più da vicino la storia del Centro, le tradizioni custodite in questi luoghi e tante curiosità che hanno reso l’esperienza ancora più coinvolgente e significativa.\n\n🤝 Desideriamo estendere il nostro grazie a tutto lo staff del Centro, per l’accoglienza, la disponibilità e l’attenzione dimostrata. Persone che, con impegno quotidiano e amore per il proprio lavoro, contribuiscono a preservare e valorizzare un patrimonio storico, culturale e territoriale di grande importanza.\n\n💫 Come HandiMap crediamo che l’accessibilità significhi anche rendere la storia, la cultura e le tradizioni un patrimonio condiviso, da conoscere, vivere e raccontare insieme.\n\n🙏 Grazie ancora alla Dottoressa Rinaldi, alla professionista che ci ha guidato e a tutto il personale del Centro per l’accoglienza e la generosità con cui ci hanno aperto le porte della loro realtà.\n\n📍 Santa Maria Capua Vetere\n🗺️ HandiMap continua il suo cammino, un incontro alla volta.\n\n#HandiMap #CavalloSalernitano #SantaMariaCapuaVetere #Campania #Accessibilità #Inclusione #Cultura #Tradizione",
+  "foto": [
+   {
+    "src": "assets/eventi/ippico-835.webp",
+    "alt": "Manilla in carrozzina con Arcangelo e due accompagnatrici in una sala del Centro",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-836.webp",
+    "alt": "Cancello d'ingresso del Centro Regionale di Incremento Ippico tra due pilastri in mattoni",
+    "width": 1080,
+    "height": 775
+   },
+   {
+    "src": "assets/eventi/ippico-837.webp",
+    "alt": "Cavalli nel recinto all'aperto del Centro, visti oltre la staccionata",
+    "width": 829,
+    "height": 1267
+   },
+   {
+    "src": "assets/eventi/ippico-838.webp",
+    "alt": "Lungo corridoio delle scuderie con i box dei cavalli su entrambi i lati",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-839.webp",
+    "alt": "Cavallo dal mantello chiaro che si affaccia dal suo box nelle scuderie",
+    "width": 591,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-840.webp",
+    "alt": "Cavallo grigio pomellato che mangia il fieno nel suo box",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-841.webp",
+    "alt": "Paddock all'aperto con un cavallo in lontananza, sotto le fronde di un grande albero",
+    "width": 880,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-842.webp",
+    "alt": "Carrozza storica nera con ruote rosse esposta nel Museo delle Carrozze",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-843.webp",
+    "alt": "Finimenti d'epoca appesi alla parete del Museo delle Carrozze",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-844.webp",
+    "alt": "Calesse a due ruote con stanghe rosse esposto nel museo",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-846.webp",
+    "alt": "Manichino con uniforme storica e cappello nero davanti alle carrozze del museo",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-847.webp",
+    "alt": "Particolare delle ruote rosse e della cassa nera di una carrozza, con il cartello descrittivo",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-848.webp",
+    "alt": "Sala del museo con antichi carri e attrezzi da tiro disposti sul pavimento in cotto",
+    "width": 592,
+    "height": 1280
+   },
+   {
+    "src": "assets/eventi/ippico-849.webp",
+    "alt": "Carri agricoli d'epoca con lunghe stanghe esposti nel museo",
+    "width": 592,
     "height": 1280
    }
   ]

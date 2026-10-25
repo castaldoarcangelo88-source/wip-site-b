@@ -38,7 +38,7 @@ ld = {"@context": "https://schema.org", "@graph": [{"@type": "Event", "@id": SIT
       "startDate": x["data"], "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {"@type": "Place", "name": x["luogo"], "address": {"@type": "PostalAddress",
-        "streetAddress": x["indirizzo"], "addressLocality": x["citta"], "addressCountry": "IT"}},
+        **({"streetAddress": x["indirizzo"]} if x["indirizzo"] else {}), "addressLocality": x["citta"], "addressCountry": "IT"}},
       "image": [SITO+f["src"] for f in x["foto"]], "description": x["testo"].split("\n")[0],
       "performer": {"@id": SITO+"#manilla"}} for x in ev]}
 p = R/"index.html"; t = p.read_text()

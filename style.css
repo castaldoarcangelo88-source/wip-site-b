@@ -254,7 +254,8 @@ footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
 .evento h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;line-height:1.2;color:var(--rosa-scuro);margin:.1em 0 .3em}
 .evento-data{font-weight:700;color:var(--testo);margin:0}
 .evento-luogo{font-style:italic;margin:0 0 1em}
-.evento p{line-height:1.6}
+.evento p{line-height:1.6;margin:0 0 .8em}
+.evento .evento-data{margin:0}
 .evento-foto{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media (min-width:640px){.evento-foto{grid-template-columns:repeat(4,1fr)}}
 .evento-data::first-letter{text-transform:uppercase}

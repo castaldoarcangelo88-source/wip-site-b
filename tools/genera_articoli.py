@@ -14,9 +14,10 @@ def schede(sez):
     out = ['      <ul class="schede-articoli">']
     for x in sorted([x for x in art if x["sezione"] == sez], key=lambda x: x["data"] or "0", reverse=True):
         d = f'\n          <p class="scheda-articolo-data"><time datetime="{x["data"]}">{data_it(x["data"])}</time></p>' if x["data"] else ""
+        s = f'\n          <p class="scheda-articolo-sintesi">{e(x["sintesi"])}</p>' if x.get("sintesi") else ""
         out.append(f'''        <li class="scheda-articolo">
           <p class="scheda-articolo-testata">{e(x["testata"])}</p>
-          <h4>{e(x["titolo"])}</h4>{d}
+          <h4>{e(x["titolo"])}</h4>{d}{s}
           <p class="voce-link"><a href="{e(x["url"])}" target="_blank" rel="noopener">Leggi l'articolo</a></p>
         </li>''')
     out.append('      </ul>')
