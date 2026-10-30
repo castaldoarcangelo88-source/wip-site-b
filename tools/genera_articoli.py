@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Rigenera le schede di interviste-articoli.html da dati/articoli.json.
+"""Rigenera le schede di articoli-interviste-libri.html (sezioni labirinti, oltre, premi) e
+articoli-interviste-handimap.html (sezione handimap) da dati/articoli.json.
 Per aggiungere un articolo: aggiungi una voce al JSON (sezione: labirinti, oltre, premi, handimap;
 data AAAA-MM-GG oppure "" se non confermata) e lancia: python3 tools/genera_articoli.py"""
 import json, html, re, pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
 MESI = "gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
-URL = "https://ilmondodibabypepita.it/interviste-articoli.html"
 art = json.loads((R/"dati/articoli.json").read_text())
 e = lambda s: html.escape(s, quote=True)
 def data_it(d):
@@ -22,15 +22,20 @@ def schede(sez):
         </li>''')
     out.append('      </ul>')
     return "\n".join(out)
-p = R/"interviste-articoli.html"; t = p.read_text()
-for sez in ("labirinti", "oltre", "premi", "handimap"):
-    t = re.sub(rf"(<!-- ARTICOLI:{sez} -->).*?(<!-- /ARTICOLI:{sez} -->)", lambda m: m.group(1)+"\n"+schede(sez)+"\n      "+m.group(2), t, flags=re.S)
-uniche = list({x["url"]: x for x in art}.values())
-items = [{"@type": "ListItem", "position": i+1, "item": {"@type": x.get("tipo") == "scheda" and "WebPage" or "Article", "headline": x["titolo"], "url": x["url"],
-          "publisher": {"@type": "Organization", "name": x["testata"]}, **({"datePublished": x["data"]} if x["data"] else {}),
-          "about": {"@id": "https://ilmondodibabypepita.it/#manilla"}}} for i, x in enumerate(uniche)]
-lista = {"@type": "ItemList", "name": "Interviste e articoli su Manilla", "numberOfItems": len(uniche), "itemListElement": items}
-t = re.sub(r'("about": \{"@id": "https://ilmondodibabypepita.it/#manilla"\})(,\n   "mainEntity": .*?)?\n  \}\n \]',
-           lambda m: m.group(1)+',\n   "mainEntity": '+json.dumps(lista, ensure_ascii=False)+'\n  }\n ]', t, count=1, flags=re.S)
-p.write_text(t)
-print("ok,", len(art), "articoli")
+PAGINE = {  # file -> (sezioni mostrate, nome della lista nel JSON-LD)
+    "articoli-interviste-libri.html": (("labirinti", "oltre", "premi"), "Articoli e interviste sui libri di Manilla"),
+    "articoli-interviste-handimap.html": (("handimap",), "Articoli e interviste su HandiMap"),
+}
+for fn, (sezioni, nome) in PAGINE.items():
+    p = R/fn; t = p.read_text()
+    for sez in sezioni:
+        t = re.sub(rf"(<!-- ARTICOLI:{sez} -->).*?(<!-- /ARTICOLI:{sez} -->)", lambda m: m.group(1)+"\n"+schede(sez)+"\n      "+m.group(2), t, flags=re.S)
+    uniche = list({x["url"]: x for x in art if x["sezione"] in sezioni}.values())
+    items = [{"@type": "ListItem", "position": i+1, "item": {"@type": x.get("tipo") == "scheda" and "WebPage" or "Article", "headline": x["titolo"], "url": x["url"],
+              "publisher": {"@type": "Organization", "name": x["testata"]}, **({"datePublished": x["data"]} if x["data"] else {}),
+              "about": {"@id": "https://ilmondodibabypepita.it/#manilla"}}} for i, x in enumerate(uniche)]
+    lista = {"@type": "ItemList", "name": nome, "numberOfItems": len(uniche), "itemListElement": items}
+    t = re.sub(r'("about": \{"@id": "https://ilmondodibabypepita.it/#manilla"\})(,\n   "mainEntity": .*?)?\n  \}\n \]',
+               lambda m: m.group(1)+',\n   "mainEntity": '+json.dumps(lista, ensure_ascii=False)+'\n  }\n ]', t, count=1, flags=re.S)
+    p.write_text(t)
+    print(fn, "ok,", len(uniche), "articoli")

@@ -82,7 +82,7 @@ pagina = f'''<!DOCTYPE html>
     </ul>
   </section>
 </div>
-<p class="nota"><a class="btn-opere" href="interviste-articoli.html">Interviste e articoli su Manilla</a> <a class="btn-opere" href="blog.html">Il blog di Manilla</a> <a class="btn-opere" href="./">Torna alla home</a></p>
+<p class="nota"><a class="btn-opere" href="articoli-interviste-libri.html">Articoli e interviste sui libri</a> <a class="btn-opere" href="articoli-interviste-handimap.html">Articoli e interviste su HandiMap</a> <a class="btn-opere" href="blog.html">Il blog di Manilla</a> <a class="btn-opere" href="./">Torna alla home</a></p>
 </main>
 <footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="https://www.devsharesrl.it/contatti/">Contatti (DevShare SRL)</a> · <a class="piede-link" href="cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>
 </body>
