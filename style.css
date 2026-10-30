@@ -292,3 +292,9 @@ footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
 .antologia .btn-opere:focus-visible{outline:3px solid var(--testo);outline-offset:3px}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .opere-intro .premi-sottotitolo{text-align:center;margin-top:.2em}
+
+/* Dicono di HandiMap (home) */
+.dicono-handimap{max-width:900px;margin:0 auto 50px;padding:0 16px;text-align:center}
+.dicono-handimap .sottotitolo{margin:.2em 0 1.2em}
+.dicono-handimap .schede-articoli{text-align:left}
+.dicono-handimap .nota{margin-top:28px}
