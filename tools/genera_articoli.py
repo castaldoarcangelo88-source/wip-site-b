@@ -3,8 +3,10 @@
 articoli-interviste-handimap.html (sezione handimap) da dati/articoli.json.
 Per aggiungere un articolo: aggiungi una voce al JSON (sezione: labirinti, oltre, premi, handimap;
 data AAAA-MM-GG oppure "" se non confermata) e lancia: python3 tools/genera_articoli.py"""
-import json, html, re, pathlib
+import json, html, re, pathlib, sys
 R = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(R/"tools"))
+import menu
 MESI = "gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
 art = json.loads((R/"dati/articoli.json").read_text())
 e = lambda s: html.escape(s, quote=True)
@@ -23,7 +25,7 @@ def schede(sez):
     out.append('      </ul>')
     return "\n".join(out)
 PAGINE = {  # file -> (sezioni mostrate, nome della lista nel JSON-LD)
-    "articoli-interviste-libri.html": (("labirinti", "oltre", "premi"), "Articoli e interviste sui libri di Manilla"),
+    "articoli-interviste-libri.html": (("labirinti", "oltre", "premi"), "Articoli e interviste tra libri e vita"),
     "articoli-interviste-handimap.html": (("handimap",), "Articoli e interviste su HandiMap"),
 }
 for fn, (sezioni, nome) in PAGINE.items():
@@ -37,5 +39,5 @@ for fn, (sezioni, nome) in PAGINE.items():
     lista = {"@type": "ItemList", "name": nome, "numberOfItems": len(uniche), "itemListElement": items}
     t = re.sub(r'("about": \{"@id": "https://ilmondodibabypepita.it/#manilla"\})(,\n   "mainEntity": .*?)?\n  \}\n \]',
                lambda m: m.group(1)+',\n   "mainEntity": '+json.dumps(lista, ensure_ascii=False)+'\n  }\n ]', t, count=1, flags=re.S)
-    p.write_text(t)
+    p.write_text(menu.applica(t, fn))
     print(fn, "ok,", len(uniche), "articoli")

@@ -10,6 +10,8 @@ import yaml,markdown
 from bs4 import BeautifulSoup
 from PIL import Image,ImageOps
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0,os.path.join(ROOT,"tools"))
+import menu
 os.chdir(ROOT)
 B="https://ilmondodibabypepita.it/"
 MESI="gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
@@ -92,8 +94,8 @@ def pagina(prefix,title,desc,path,ogimg,ogtype,ld,body):
 {json.dumps(ld,ensure_ascii=False,indent=1)}
 </script>
 '''
-  footer=f'<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="{prefix}cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>'
-  return TESTA.format(p=prefix,v=css_ver())+meta+'</head>\n<body class="pagina pagina-blog">\n<header class="testata"><a href="'+(prefix or "./")+'">Il Mondo di <span>Baby Pepita</span></a></header>\n<main>\n'+body+'\n</main>\n'+footer+'\n</body>\n</html>\n'
+  footer=f'<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="https://www.devsharesrl.it/contatti/">Contatti (DevShare SRL)</a> · <a class="piede-link" href="{prefix}cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>'
+  return menu.applica(TESTA.format(p=prefix,v=css_ver())+meta+'</head>\n<body class="pagina pagina-blog">\n<header class="testata"><a href="'+(prefix or "./")+'">Il Mondo di <span>Baby Pepita</span></a></header>\n<main>\n'+body+'\n</main>\n'+footer+'\n</body>\n</html>\n',path)
 PERSON={"@type":"Person","@id":B+"#manilla","name":"Manilla","url":B}
 def leggi_md(f):
   t=open(f,encoding="utf-8").read()
@@ -168,6 +170,7 @@ def main():
   sm=sm.replace("\n</urlset>",add+"\n</urlset>")
   open("sitemap.xml","w").write(sm)
   print("blog.html:",len(arts),"articoli; sitemap:",sm.count("<url>"),"URL")
+  print("menu aggiornato in",menu.applica_tutto(),"pagine")
   if errori:
     print("ERRORI:",*errori,sep="\n- "); sys.exit(1)
 if __name__=="__main__": main()

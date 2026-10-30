@@ -3,8 +3,10 @@
  - scritti-da-manilla.html (articoli scritti da Manilla per altri siti) da dati/scritti-da-manilla.json
 Per aggiungere una voce: aggiungi una riga al JSON (data AAAA-MM-GG oppure "" se non confermata)
 e lancia: python3 tools/genera_scritti.py"""
-import json, html, re, pathlib
+import json, html, re, pathlib, sys
 R = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(R/"tools"))
+import menu
 SITO = "https://ilmondodibabypepita.it/"
 MESI = "gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre".split()
 e = lambda s: html.escape(s, quote=True)
@@ -82,12 +84,12 @@ pagina = f'''<!DOCTYPE html>
     </ul>
   </section>
 </div>
-<p class="nota"><a class="btn-opere" href="articoli-interviste-libri.html">Articoli e interviste sui libri</a> <a class="btn-opere" href="articoli-interviste-handimap.html">Articoli e interviste su HandiMap</a> <a class="btn-opere" href="blog.html">Il blog di Manilla</a> <a class="btn-opere" href="./">Torna alla home</a></p>
+<p class="nota"><a class="btn-opere" href="articoli-interviste-libri.html">Articoli e interviste tra libri e vita</a> <a class="btn-opere" href="articoli-interviste-handimap.html">Articoli e interviste su HandiMap</a> <a class="btn-opere" href="blog.html">Il blog di Manilla</a> <a class="btn-opere" href="./">Torna alla home</a></p>
 </main>
 <footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="https://www.devsharesrl.it/contatti/">Contatti (DevShare SRL)</a> · <a class="piede-link" href="cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>
 </body>
 </html>
 '''
-(R/"scritti-da-manilla.html").write_text(pagina)
+(R/"scritti-da-manilla.html").write_text(menu.applica(pagina, "scritti-da-manilla.html"))
 
 print("ok:", len(scr), "articoli scritti")
