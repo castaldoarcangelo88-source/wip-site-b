@@ -296,5 +296,5 @@ footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
 /* Dicono di HandiMap (home) */
 .dicono-handimap{max-width:900px;margin:0 auto 50px;padding:0 16px;text-align:center}
 .dicono-handimap .sottotitolo{margin:.2em 0 1.2em}
-.dicono-handimap .schede-articoli{text-align:left}
+.dicono-handimap .schede-articoli{text-align:left;max-width:720px;margin-left:auto;margin-right:auto;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .dicono-handimap .nota{margin-top:28px}
