@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Rigenera due parti del sito dai dati in dati/:
+"""Rigenera una parte del sito dai dati in dati/:
  - scritti-da-manilla.html (articoli scritti da Manilla per altri siti) da dati/scritti-da-manilla.json
- - la sezione «Dicono di HandiMap» in index.html da dati/dicono-di-handimap.json
 Per aggiungere una voce: aggiungi una riga al JSON (data AAAA-MM-GG oppure "" se non confermata)
 e lancia: python3 tools/genera_scritti.py"""
 import json, html, re, pathlib
@@ -91,17 +90,4 @@ pagina = f'''<!DOCTYPE html>
 '''
 (R/"scritti-da-manilla.html").write_text(pagina)
 
-# --- sezione «Dicono di HandiMap» in home
-rass = ordina(json.loads((R/"dati/dicono-di-handimap.json").read_text()))
-sch = "\n".join(scheda(x["fonte"], x["titolo"], x["data"], x.get("sintesi"), x["url"], x.get("dettaglio", "")) for x in rass)
-sez = f'''<section class="dicono-handimap" id="dicono-di-handimap" aria-labelledby="titolo-dicono-handimap">
-    <h2 id="titolo-dicono-handimap">Dicono di HandiMap</h2>
-    <p class="sottotitolo">Chi ha parlato del progetto di Manilla</p>
-    <ul class="schede-articoli">
-{sch}
-    </ul>
-    <p class="nota"><a class="btn-opere" href="interviste-articoli.html#handimap">Tutti gli articoli su HandiMap</a></p>
-  </section>'''
-p = R/"index.html"; t = p.read_text()
-t = re.sub(r"(<!-- DICONO-HANDIMAP -->).*?(<!-- /DICONO-HANDIMAP -->)", lambda m: m.group(1)+"\n  "+sez+"\n  "+m.group(2), t, flags=re.S)
-p.write_text(t); print("ok:", len(scr), "articoli scritti,", len(rass), "voci rassegna")
+print("ok:", len(scr), "articoli scritti")
