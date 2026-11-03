@@ -96,7 +96,7 @@ footer .piede-link{color:var(--rosa-scuro)}
 .poesia{text-align:center;padding-bottom:40px}
 .versi{display:inline-block;text-align:left;max-width:100%;margin:16px auto 10px;font-family:'Cormorant Garamond',serif;font-size:1.32rem;line-height:1.6}
 .strofa{margin:0 0 1.3em}
-.audio-poesia{margin:0 auto 1.6em;max-width:480px}.audio-poesia audio{display:block;width:100%}.audio-poesia figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;margin-top:8px}
+.audio-poesia{margin:0 auto 1.6em;max-width:480px}.audio-poesia audio{display:block;width:100%}.audio-poesia figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;margin:0 0 8px}
 .firma{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--rosa-scuro);margin:.2em 0 .8em}
 .opere-sezione{margin:44px 0 0;text-align:center}
 .schede{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:720px;margin:22px auto 0}
