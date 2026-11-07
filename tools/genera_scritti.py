@@ -14,12 +14,17 @@ def data_it(d):
     a, m, g = d.split("-"); return f"{int(g)} {MESI[int(m)-1]} {a}"
 def ordina(v): return sorted(v, key=lambda x: x["data"] or "0", reverse=True)
 
-def scheda(testata, titolo, data, sintesi, url, dettaglio=""):
+def scheda(testata, titolo, data, sintesi, url, dettaglio="", copertina="", alt_copertina=""):
     t = f'<p class="scheda-articolo-testata">{e(testata)}</p>'
     if dettaglio: t += f'\n          <p class="scheda-articolo-data">{e(dettaglio)}</p>'
     d = f'\n          <p class="scheda-articolo-data"><time datetime="{data}">{data_it(data)}</time></p>' if data else ""
     s = f'\n          <p class="scheda-articolo-sintesi">{e(sintesi)}</p>' if sintesi else ""
-    return f'''        <li class="scheda-articolo">
+    img = ""
+    if copertina:
+        alt = alt_copertina or f"Copertina dell'articolo «{titolo}»"
+        img = (f'\n          <a class="scheda-articolo-copertina" href="{e(url)}" target="_blank" rel="noopener">'
+               f'<img src="{e(copertina)}" alt="{e(alt)}" loading="lazy" decoding="async"></a>')
+    return f'''        <li class="scheda-articolo">{img}
           {t}
           <h4>{e(titolo)}</h4>{d}{s}
           <p class="voce-link"><a href="{e(url)}" target="_blank" rel="noopener">Leggi l'articolo</a></p>
@@ -39,7 +44,7 @@ ld = {"@context": "https://schema.org", "@graph": [
    "inLanguage": "it", "isPartOf": {"@type": "WebSite", "name": "Il Mondo di Baby Pepita", "url": SITO},
    "about": {"@id": SITO+"#manilla"},
    "mainEntity": {"@type": "ItemList", "name": "Articoli scritti da Manilla", "numberOfItems": len(scr), "itemListElement": items}}]}
-schede = "\n".join(scheda(x["testata"], x["titolo"], x["data"], x.get("sintesi"), x["url"]) for x in scr)
+schede = "\n".join(scheda(x["testata"], x["titolo"], x["data"], x.get("sintesi"), x["url"], copertina=x.get("copertina",""), alt_copertina=x.get("alt_copertina","")) for x in scr)
 pagina = f'''<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -63,7 +68,7 @@ pagina = f'''<!DOCTYPE html>
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=21">
 <link rel="stylesheet" href="consenso/consenso-cookie.css">
 <script src="consenso/consenso-cookie.js" data-ga-id="G-HYYZ6MDRPR" data-informativa="cookie.html" data-nome-sito="Il Mondo di Baby Pepita"></script>
 </head>
