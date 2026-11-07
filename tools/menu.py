@@ -6,7 +6,7 @@
 Per aggiungere o rinominare una voce modifica VOCI e rilancia questo script."""
 import re, pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
-CSS_VER = "22"
+CSS_VER = "23"
 # (chiave, etichetta, file)
 VOCI = [
     ("home", "Home", "./"),
