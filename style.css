@@ -322,3 +322,7 @@ footer .piede-link{display:inline-flex;align-items:center;min-height:48px}
   .menu-js.aperto ul{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:2px;max-width:420px;margin:10px auto 0;padding:8px;background:#fff;border:1px solid var(--oro);border-radius:20px;box-shadow:0 14px 30px rgba(74,48,54,.18)}
   .menu-js.aperto a{justify-content:flex-start;width:100%;min-height:48px;padding:8px 16px;border-radius:14px;text-align:left}
 }
+.fb-post{margin:1.2em auto;max-width:500px;padding:1em;border:1px solid #ddd;border-radius:12px;text-align:center}
+.fb-post a{display:block;font-weight:600;margin-bottom:.6em}
+.fb-post-carica{font:inherit;padding:.5em 1.1em;border-radius:999px;border:1px solid #1877f2;background:#1877f2;color:#fff;cursor:pointer}
+.fb-post figcaption{font-size:.85em;opacity:.75;margin-top:.6em}

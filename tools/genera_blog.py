@@ -63,6 +63,15 @@ def pulisci(md_text,titolo):
     m=re.fullmatch(r"https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)\S*",tx)
     if m and not p.find("a"):
       p.clear(); a=soup.new_tag("a",href=f"https://www.youtube.com/watch?v={m.group(1)}",target="_blank",rel="nofollow noopener"); a.string="Guarda il video su YouTube"; p.append(a)
+  # post Facebook incollato da solo in un paragrafo: scheda che carica il post solo al clic (niente cookie Facebook prima)
+  for p in soup.find_all("p"):
+    tx=p.get_text(strip=True)
+    if re.fullmatch(r"https://www\.facebook\.com/[\w.\-]+/posts/[\w\-]+/?",tx) and len(p.find_all("a"))<=1:
+      fig=soup.new_tag("figure",attrs={"class":"fb-post","data-fb":tx})
+      a=soup.new_tag("a",href=tx,target="_blank",rel="nofollow noopener"); a.string="Guarda il post su Facebook"
+      b=soup.new_tag("button",type="button",attrs={"class":"fb-post-carica"}); b.string="Mostra il post qui"
+      nota=soup.new_tag("figcaption"); nota.string="Il post si apre da Facebook solo se lo chiedi tu."
+      fig.extend([a,b,nota]); p.replace_with(fig)
   return str(soup),soup.get_text(" ",strip=True)
 TESTA='''<!DOCTYPE html>
 <html lang="it">
@@ -95,7 +104,7 @@ def pagina(prefix,title,desc,path,ogimg,ogtype,ld,body):
 </script>
 '''
   footer=f'<footer>© 2026 Il Mondo di Baby Pepita · ilmondodibabypepita.it · fatto con ♥ per Manilla<br><a class="piede-link" href="https://www.devsharesrl.it/contatti/">Contatti (DevShare SRL)</a> · <a class="piede-link" href="{prefix}cookie.html">Cookie policy</a> · <a class="piede-link" href="#preferenze-cookie" data-preferenze-cookie>Preferenze cookie</a></footer>'
-  return menu.applica(TESTA.format(p=prefix,v=css_ver())+meta+'</head>\n<body class="pagina pagina-blog">\n<header class="testata"><a href="'+(prefix or "./")+'">Il Mondo di <span>Baby Pepita</span></a></header>\n<main>\n'+body+'\n</main>\n'+footer+'\n</body>\n</html>\n',path)
+  return menu.applica(TESTA.format(p=prefix,v=css_ver())+meta+'</head>\n<body class="pagina pagina-blog">\n<header class="testata"><a href="'+(prefix or "./")+'">Il Mondo di <span>Baby Pepita</span></a></header>\n<main>\n'+body+'\n</main>\n'+footer+(f'\n<script src="{prefix}blog/fb-post.js" defer></script>' if 'class="fb-post"' in body else '')+'\n</body>\n</html>\n',path)
 PERSON={"@type":"Person","@id":B+"#manilla","name":"Manilla","url":B}
 def leggi_md(f):
   t=open(f,encoding="utf-8").read()
