@@ -32,7 +32,7 @@ E non ci sono soltanto le barriere fisiche. Ci sono quelle mentali, forse ancora
 
 Ci sono gli sguardi, i pregiudizi, le domande fuori luogo e quella continua tendenza a considerare una persona con disabilità come qualcuno da compatire, proteggere o ammirare. Come se non fosse semplicemente una persona con i propri desideri, le proprie capacità e il diritto di vivere la propria vita.
 
-Proprio ieri, alla notizia, abbiamo fatto un post su [HandiMap.it](https://handimap.it), perché è proprio ciò che stiamo cercando di abbattere: le barriere mentali.
+Proprio ieri, alla notizia, abbiamo fatto un [post su HandiMap](https://www.facebook.com/share/p/1CYBUyM1Sq/), perché è proprio ciò che stiamo cercando di abbattere: le barriere mentali. Se vuoi fare la tua parte, [registrati su HandiMap.it](https://handimap.it): ogni segnalazione conta.
 
 ## L'inclusione vera
 
