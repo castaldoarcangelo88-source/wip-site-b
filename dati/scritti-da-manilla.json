@@ -1,6 +1,14 @@
 [
   {
     "testata": "Appunti di Zelda",
+    "titolo": "Fiori nella poesia, 2 storie sorprendenti da conoscere",
+    "data": "2026-11-14",
+    "url": "https://www.appuntidizelda.it/fiori-nella-poesia/",
+    "copertina": "assets/scritti-copertine/fiori-poesia.jpg",
+    "alt_copertina": "Copertina dell'articolo «Fiori nella poesia, 2 storie sorprendenti da conoscere» su Appunti di Zelda"
+  },
+  {
+    "testata": "Appunti di Zelda",
     "titolo": "Il profondo significato dei fiori",
     "data": "2026-11-07",
     "url": "https://www.appuntidizelda.it/il-profondo-significato-dei-fiori/",
