@@ -178,5 +178,25 @@
   "sintesi": "L'articolo cita HandiMap.",
   "copertina": "assets/articoli-copertine/18-rivista-blam-scrittori-emergenti-i-libri-da-legg.jpg",
   "alt_copertina": "Copertina dell'articolo «Scrittori emergenti: i libri da leggere degli esordienti italiani» su Rivista Blam"
+ },
+ {
+  "sezione": "labirinti",
+  "testata": "La Fondazione Casa delle Arti",
+  "titolo": "Manilla Castaldo",
+  "data": "2026-11-16",
+  "url": "https://spazio.lafondazionecasadellearti.it/2026/11/manilla-castaldo.html",
+  "copertina": "assets/articoli-copertine/19-fondazione-casa-delle-arti-manilla-castaldo.jpg",
+  "alt_copertina": "Copertina della presentazione «Manilla Castaldo» sul sito della Fondazione Casa delle Arti",
+  "etichetta": "Leggi la presentazione"
+ },
+ {
+  "sezione": "labirinti",
+  "testata": "The Digital Moon",
+  "titolo": "Intervista a Manilla Castaldo: Dalla poesia all'inclusione digitale",
+  "data": "2026-11-09",
+  "url": "https://www.thedigitalmoon.com/intervista-a-manilla-castaldo-dalla-poesia-allinclusione-digitale/",
+  "copertina": "assets/articoli-copertine/20-the-digital-moon-intervista-a-manilla-castaldo.jpg",
+  "alt_copertina": "Copertina dell'intervista «Intervista a Manilla Castaldo: Dalla poesia all'inclusione digitale» su The Digital Moon",
+  "etichetta": "Leggi l'intervista"
  }
 ]
