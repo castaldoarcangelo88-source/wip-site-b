@@ -1,6 +1,15 @@
 [
   {
     "testata": "Appunti di Zelda",
+    "titolo": "Fiori in musica: 7 storie sorprendenti",
+    "data": "2026-11-23",
+    "url": "https://www.appuntidizelda.it/fiori-in-musica-7-storie-sorprendenti/",
+    "sintesi": "La musica e i fiori hanno qualcosa in comune. Entrambi riescono a farci provare emozioni, a riportarci indietro nel tempo e, qualche volta, a farci pensare a qualcuno che non c'è più.",
+    "copertina": "assets/scritti-copertine/fiori-musica.jpg",
+    "alt_copertina": "Copertina dell'articolo «Fiori in musica: 7 storie sorprendenti» su Appunti di Zelda"
+  },
+  {
+    "testata": "Appunti di Zelda",
     "titolo": "Fiori nella poesia, 2 storie sorprendenti da conoscere",
     "data": "2026-11-14",
     "url": "https://www.appuntidizelda.it/fiori-nella-poesia/",
